@@ -1,0 +1,468 @@
+/* "Simpliste" template. Renat Rafikov. http://cssr.ru/simpliste/ */
+
+@import url('reset.css');
+@import url('skin.css');
+
+
+/* Columns 
+-------
+.col_33 | .col_33 | .col_33
+.clearfix
+-------
+.col_75 | .col_25
+.clearfix
+-------
+.col_66 | .col_33
+.clearfix
+-------
+.col_50 | .col_50
+.clearfix
+-------
+.col_100
+-------
+*/
+/* Базовый контейнер табов */
+.tabs {
+	min-width: 320px;
+	max-width: auto;
+	padding: 0px;
+	margin: 0 auto;
+}
+/* Стили секций с содержанием */
+.tabs>section {
+	display: none;
+	padding: 15px;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+.tabs>section>p {
+	margin: 0 0 5px;
+	line-height: 1.5;
+	color: #383838;
+	/* прикрутим анимацию */
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+/* Описываем анимацию свойства opacity */
+ 
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+/* Прячем чекбоксы */
+.tabs>input {
+	display: none;
+	position: absolute;
+}
+/* Стили переключателей вкладок (табов) */
+.tabs>label {
+	display: inline-block;
+	margin: 0 0 -1px;
+	padding: 15px 25px;
+	font-weight: 600;
+	text-align: center;
+	color: #aaa;
+	border: 0px solid #ddd;
+	border-width: 1px 1px 1px 1px;
+	background: #f1f1f1;
+	border-radius: 3px 3px 0 0;
+}
+/* Шрифт-иконки от Font Awesome в формате Unicode */
+.tabs>label:before {
+	font-family: fontawesome;
+	font-weight: normal;
+	margin-right: 10px;
+}
+/*.tabs>label[for*="1"]:before {
+	content: "\f19a";
+}
+.tabs>label[for*="2"]:before {
+	content: "\f17a";
+}
+.tabs>label[for*="3"]:before {
+	content: "\f13b";
+}
+.tabs>label[for*="4"]:before {
+	content: "\f13c";
+}
+/* Изменения стиля переключателей вкладок при наведении */
+ 
+.tabs>label:hover {
+	color: #888;
+	cursor: pointer;
+}
+/* Стили для активной вкладки */
+.tabs>input:checked+label {
+	color: #555;
+	border-top: 1px solid #009933;
+	border-bottom: 1px solid #fff;
+	background: #fff;
+}
+/* Активация секций с помощью псевдокласса :checked */
+#tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3, #tab4:checked~#content-tab4, #tab5:checked~#content-tab5, #tab6:checked~#content-tab6 {
+	display: block;
+}
+/* Убираем текст с переключателей 
+* и оставляем иконки на малых экранах
+*/
+ 
+@media screen and (max-width: 680px) {
+	.tabs>label {
+		font-size: 0;
+	}
+	.tabs>label:before {
+		margin: 0;
+		font-size: 18px;
+	}
+}
+/* Изменяем внутренние отступы 
+*  переключателей для малых экранов
+*/
+@media screen and (max-width: 400px) {
+	.tabs>label {
+		padding: 15px;
+	}
+}
+.col_25 {
+  width:23%;
+  margin:0 2% 0 0;
+  float:left;
+}
+.col_33 {
+  width:31%;
+  margin:0 2% 0 0;
+  float:left;
+}
+.col_50 {
+  width:48%;
+  margin:0 2% 0 0;
+  float:left;
+}
+.col_66 {
+  width:64%;
+  margin:0 2% 0 0;
+  float:left;
+}
+.col_75 {
+  width:73%;
+  margin:0 2% 0 0;
+  float:left;
+}
+.col_100 {
+  width:98%;
+  margin:0 2% 0 0;
+}
+
+.col_25.wrap { width:25%; margin:0;}
+.col_33.wrap { width:33%; margin:0;}
+.col_50.wrap { width:50%; margin:0;}
+.col_66.wrap { width:66%; margin:0;}
+.col_75.wrap { width:75%; margin:0;}
+.col_100.wrap { width:100%; margin:0;}
+/* End columns */
+
+
+/* Helper classes */
+.center {text-align:center;}
+.left {text-align:left;}
+.right {text-align:right;}
+
+.img_floatleft {float:left; margin:0 10px 5px 0;}
+.img_floatright {float:right; margin:0 0 5px 10px;}
+
+.img {max-width:100%;}
+/* End helper classes */
+
+a.button { color:auto; }
+/* My classes */
+.img_scale {transition: transform .8s ease-in-out;}
+.img_scale:hover { 
+    -moz-transform: scale(3); /* Для Firefox */
+    -ms-transform: scale(3); /* Для IE */
+    -webkit-transform: scale(3); /* Для Safari, Chrome, iOS */
+    -o-transform: scale(3); /* Для Opera */
+    transform: scale(3);
+   }
+th { border:hidden;}
+.photo img {width:200px} 
+.header_tr { color: #FFFFFF; margin: auto; font-weight:100;}
+.main_tr {margin:auto; font-weight:100; text-align:center;}
+.photo {width:200px; font-weight:100; border-right: #D0D0D0 thin solid}
+.size {color:#939191;font-weight:100;}
+.size_tr {width: 200px; font-weight:100; border-right: #D0D0D0 thin solid;}
+.sizes {
+	width:95px;
+	overflow: hidden;
+	font-weight:100;
+	border-right: #D0D0D0 thin solid;
+	}
+.sizes div { 
+	background: #86DB82;
+	padding-top: 4px;
+	margin: 3px;
+	width: 25px;
+	height: 21px;
+	float:left;
+	color:#FFFFFF;
+	cursor: default;
+	}
+.sizes div:hover {
+	background: #4FB74C;
+}
+.codef {
+	width:132px;
+	overflow: hidden;
+	font-weight:100;
+	border-right: #D0D0D0 thin solid;
+	cursor: default;
+	}
+.codef div { 
+	background: #FF9FA1;
+	padding-top: 4px;
+	margin: 3px;
+	width: 60px;
+	height: 21px;
+	float:left;
+	color:#FFFFFF;
+	}
+.codef div:hover {
+	background: #FD3C27;
+}
+.option {
+	width:100px;
+	font-weight:100;
+	border-right: #D0D0D0 thin solid;
+	cursor: default;
+}
+.option div {
+	background: #73B6FF;
+	padding-top: 4px;
+	margin: 6px auto;
+	width: 75px;
+	height: 21px;
+	color:#FFFFFF;
+	font-weight:100;
+}
+.option div:hover {
+	background:#007AFF;
+}
+.color {
+	width: 150px;
+	overflow:hidden;
+	font-weight:100;
+	}
+.color div{
+	width:25px;
+	height:25px;
+	margin: 3px;
+	float:left;
+}
+.white {
+	background: #ffffff;
+	border: #989898 solid thin;
+}
+.mate {
+	background:#d9d9d9;
+}
+.mate:hover {
+	background: #ABABAB;
+}
+.opaque {
+	background:#e1e1e1;
+}
+.opaque:hover {
+	background:#e3e3e3;
+}
+.black {
+	background:#7e7e7e;
+}
+.black:hover {
+	background:#303030;
+}
+.green {
+	background:#7fb38c;
+}
+.green:hover {
+	background:#238138;
+}
+.yellow {
+	background:#e4e18f;
+}
+.yellow:hover {
+	background:#f0e93d;
+}
+.brown {
+	background: #a69783;
+}
+.brown:hover {
+	background: #6b502a;
+}
+.article_header {
+  background:#B43234;
+  border:1px solid #A9292B;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  -webkit-box-shadow:#942A2C 0px 0px 3px;
+  -moz-box-shadow:#942A2C 0px 0px 3px;
+  box-shadow:#942A2C 0px 0px 3px;
+  padding:15px 0 15px 2%;
+}
+.tooltip {
+	border-bottom: 1px dotted #0077AA;
+}
+
+.tooltip::after {
+	font-weight:100;
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 8px 0px 8px 0px;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	content: attr(data-tooltip); /* Главная часть кода, определяющая содержимое всплывающей подсказки */
+	margin-top: -50px;
+	margin-left: -100px;
+	opacity: 0; /* Наш элемент прозрачен... */
+	padding: 10px 10px;
+	position: absolute;
+	visibility: hidden; /* ...и скрыт. */
+			
+	transition: all 0.4s ease-in-out; /* Добавить плавности по вкусу */
+}
+		
+.tooltip:hover::after {
+	opacity: 1; /* Показываем его */
+	visibility: visible;
+}
+.color .tooltip::after {
+	margin-top: -50px;
+	margin-left: -30px;
+}
+.htooltip span { /* Внешний вид нашего тултипа */
+	font-weight:100;
+	background-color: rgba(0,0,0, 0.8);
+	border-radius: 15px 0px 15px 0px;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	color: #fff;
+	margin-left: -100px;
+	margin-top: -75px;
+	opacity: 0; /* Делаем его прозрачным */
+	padding: 10px 10px 10px 10px;
+	position: absolute;
+	text-decoration: none;
+	visibility: hidden; /* И прячем */
+	z-index: 10;
+	transition: all 0.4s ease-in-out;
+}
+.codef .htooltip span	 {
+	width: 300px;
+}
+.option .htooltip span {
+	width: 200px;
+}
+.htooltip:hover span { /* По hover отображаем тултип */
+	opacity: 1;
+	visibility: visible;
+}
+@media only screen and (max-width:480px) { /* Smartphone */
+  .header {
+    margin-bottom:0;
+  }
+
+  .logo{
+    display:block;
+    float:none;
+    text-align:center;
+  }
+  
+  .menu_main {
+    width:100%;
+    text-align:center;
+    float:none;
+    padding:0;
+    margin:1em 0 0 0;
+  }
+  
+  .menu_main a {
+    display:inline-block;
+    padding:7px;
+  }
+  
+  .copyright {
+    width:100%;
+    float:none;
+    text-align:center;
+  }
+
+  .footer  {
+    padding-bottom:0;
+  }
+  
+  .menu_bottom {
+    width:100%;
+    float:none;
+    text-align:center;
+    margin:1em 0 0 0;
+    padding:0;
+  }  
+  .menu_bottom a {
+    display:inline-block;
+    padding:6px;
+  }
+  
+  .form textarea {
+    width:100%;
+  }  
+  .form label {
+    padding:10px 0 8px 0;
+  }
+}
+
+
+@media only screen and (max-width:768px) { /* Tablet */
+  .col_25,
+  .col_33,
+  .col_66,
+  .col_50 ,
+  .col_75  {
+    width:98%;
+    float:none;
+  } 
+  
+  .form label {
+    padding:10px 0 8px 0;
+  }
+}
+
+
+@media print { /* Printer */
+  * { background:transparent !important; color:black !important; text-shadow:none !important; filter:none !important; -ms-filter:none !important; }
+  a, a:visited { color:#444 !important; text-decoration:underline; }
+  a[href]:after { content:" (" attr(href) ")"; }
+  abbr[title]:after { content:" (" attr(title) ")"; }
+  pre, blockquote { border:1px solid #999; page-break-inside:avoid; }
+  thead { display:table-header-group; }
+  tr, img { page-break-inside:avoid; }
+  img { max-width:100% !important; }
+  @page { margin:0.5cm; }
+  p, h2, h3 { orphans:3; widows:3; }
+  h2, h3{ page-break-after:avoid; }
+  
+  .header, .footer, .form {display:none;}
+  .col_33, .col_66, .col_50  { width:98%; float:none; } 
+}
